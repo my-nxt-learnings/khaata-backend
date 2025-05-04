@@ -16,7 +16,7 @@ const customerSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator: function (v) {
-        return /^[0-9]{10}$/.test(v); // or update as per your requirement
+        return /^[0-9]{10}$/.test(v); 
       },
       message: 'Invalid phone number'
     }

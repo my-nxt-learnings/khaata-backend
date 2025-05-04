@@ -1,6 +1,6 @@
 const Customer = require('../models/Customer');
 
-// @desc Create a new customer
+
 exports.createCustomer = async (req, res) => {
   try {
     const { name, phone, trustScore } = req.body;
@@ -19,7 +19,7 @@ exports.createCustomer = async (req, res) => {
   }
 };
 
-// @desc Get all customers of logged-in user
+
 exports.getCustomers = async (req, res) => {
   try {
     const customers = await Customer.find({ user: req.user._id });
@@ -29,7 +29,7 @@ exports.getCustomers = async (req, res) => {
   }
 };
 
-// @desc Get single customer
+
 exports.getCustomerById = async (req, res) => {
   try {
     const customer = await Customer.findOne({ _id: req.params.id, user: req.user._id });
@@ -42,7 +42,7 @@ exports.getCustomerById = async (req, res) => {
   }
 };
 
-// @desc Update a customer
+
 exports.updateCustomer = async (req, res) => {
   try {
     const updated = await Customer.findOneAndUpdate(
@@ -59,7 +59,7 @@ exports.updateCustomer = async (req, res) => {
   }
 };
 
-// @desc Delete a customer
+
 exports.deleteCustomer = async (req, res) => {
   try {
     const deleted = await Customer.findOneAndDelete({ _id: req.params.id, user: req.user._id });

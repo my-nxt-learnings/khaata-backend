@@ -1,6 +1,6 @@
 const Loan = require('../models/Loan');
 
-// Record a repayment
+
 const recordRepayment = async (req, res) => {
   try {
     const { id: loanId } = req.params;
@@ -16,7 +16,7 @@ const recordRepayment = async (req, res) => {
       return res.status(404).json({ message: 'Loan not found or unauthorized' });
     }
 
-    // Optional: Prevent overpayment
+
     const totalPaid = loan.repayments.reduce((sum, r) => sum + r.amount, 0);
     const remaining = loan.amount - totalPaid;
 

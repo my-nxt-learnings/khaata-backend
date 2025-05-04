@@ -9,7 +9,7 @@ const createToken = (userId) => {
   });
 };
 
-// @desc Register new user
+
 exports.register = async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -27,7 +27,7 @@ exports.register = async (req, res) => {
   }
 };
 
-// @desc Login user
+
 exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;

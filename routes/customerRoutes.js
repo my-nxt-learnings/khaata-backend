@@ -9,7 +9,7 @@ const {
   deleteCustomer,
 } = require('../controllers/customerController');
 
-router.use(auth); // All routes are protected
+router.use(auth);
 
 router.post('/', createCustomer);
 router.get('/', getCustomers);
